@@ -1,14 +1,26 @@
 import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import heroImg from './assets/hero.png'
+import './App.css'
 import AddBook from './components/AddBook'
+import DeleteBook from './components/DeleteBook'
+import SearchBook from './components/SearchBook'
+import ViewBook from './components/ViewBook'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
+  const [count, setCount] = useState(0)
 
   return (
     <>
-    <BrowserRouter>
+      <BrowserRouter>
     <Routes>
-  <Route path="add" element={<AddBook />} />
+  {/* <Route index element={<StepOne />} /> */}
+  <Route path="/" element={<AddBook />} />
+  <Route path="search" element={<SearchBook />} />
+  <Route path="delete" element={<DeleteBook />} />
+  <Route path="view" element={<ViewBook />} />
 </Routes>
      </BrowserRouter>
     </>
